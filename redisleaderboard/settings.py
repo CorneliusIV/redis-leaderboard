@@ -105,6 +105,9 @@ CACHES = {
     "leaderboard": {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": REDIS_URL,
+        "OPTIONS": {
+            "CONNECTION_POOL_KWARGS": {"decode_responses": True}
+        }
     },
 }
 
