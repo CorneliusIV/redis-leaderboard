@@ -17,8 +17,7 @@ class Player(models.Model):
         return self.name
 
     def rank(self):
-        player_value = self.redis_key_value()
-        rank = rediscon.zrevrank('leaderboard', player_value)
+        rank = rediscon.zrevrank('leaderboard', self.name)
         if rank is None:
             rank = 0
         return rank + 1

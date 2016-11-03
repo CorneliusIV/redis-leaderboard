@@ -16,10 +16,11 @@ Including another URLconf
 import debug_toolbar
 from django.conf.urls import url
 from django.contrib import admin
-from .views import LeaderboardView
+from .views import LeaderboardView, PlayerView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', LeaderboardView.as_view()),
+    url(r'^player/$', PlayerView.as_view()),
     url(r'^__debug__/', debug_toolbar.urls),
 ]

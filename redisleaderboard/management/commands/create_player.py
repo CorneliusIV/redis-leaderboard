@@ -11,7 +11,6 @@ logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
-    help = 'Sets up all active pipelines to run in an rq worker'
 
     def handle(self, *args, **options):
         for x in range(100000):
