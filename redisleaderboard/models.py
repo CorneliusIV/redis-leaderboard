@@ -55,7 +55,6 @@ class Game(models.Model):
 
 def response_to_dict(b):
     d = json.loads(b[0].decode('utf8'))
-    print(d)
     d.update({'score': b[1]})
     return d
 
